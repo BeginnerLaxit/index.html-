@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhoneSearch Pro</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+}
+
+#search{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.phone{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body>
+
+<h1>📱 PhoneSearch Pro</h1>
+
+<input id="search" type="text"
+placeholder="Search phone..."
+onkeyup="searchPhone()">
+
+<div class="phone">
+<h2>Samsung Galaxy A50</h2>
+<p><b>Company:</b> Samsung</p>
+<p><b>Display:</b> 6.4-inch Super AMOLED</p>
+<p><b>Processor:</b> Exynos 9610</p>
+<p><b>RAM:</b> 6GB</p>
+<p><b>Storage:</b> 128GB</p>
+<p><b>Camera:</b> 25MP + 8MP + 5MP</p>
+<p><b>Front Camera:</b> 25MP</p>
+<p><b>Battery:</b> 4000mAh</p>
+<p><b>Android:</b> Android 11</p>
+</div>
+
+<div class="phone">
+<h2>iPhone 15 Pro Max</h2>
+<p><b>Company:</b> Apple</p>
+<p><b>Display:</b> 6.7-inch OLED</p>
+<p><b>Processor:</b> A17 Pro</p>
+<p><b>RAM:</b> 8GB</p>
+<p><b>Storage:</b> 256GB</p>
+<p><b>Camera:</b> 48MP + 12MP + 12MP</p>
+<p><b>Battery:</b> 4422mAh</p>
+<p><b>OS:</b> iOS</p>
+</div>
+
+<script>
+function searchPhone(){
+let input=document.getElementById("search").value.toLowerCase();
+let phones=document.getElementsByClassName("phone");
+
+for(let i=0;i<phones.length;i++){
+let text=phones[i].innerText.toLowerCase();
+phones[i].style.display=text.includes(input)
+? "block" : "none";
+}
+}
+</script>
+
+</body>
+  </html>
